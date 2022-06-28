@@ -21,10 +21,14 @@ Il pagamento avviene con la carta di credito, che non deve essere scaduta. (modi
         <ul>
             <?php foreach($products as $product) { ?>
                 <li>
-                    <p><?= $product->name ?></p>
+                    <p><?= $product->brand ?></p>
                     <p><?= $product->price ?></p>
                     <p><?= $product->quantity ?></p>
                     <p><?= $product->animal_type ?></p>
+                    <p><?= $product->food_type ?></p>
+                    <p><?= $product->expire_date ?></p>
+                    <p><?= $product->toy_type ?></p>
+                    <p><?= $product->size ?></p>
                 </li>
             <?php } ?>
         </ul>        
