@@ -22,16 +22,29 @@ Il pagamento avviene con la carta di credito, che non deve essere scaduta  -->
         <hr>
         <h2>Products</h2>
         <ul>
-            <?php foreach($products as $product) { ?>
+            <?php foreach($Products as $product) { ?>
                 <li>
-                    <span> <strong>Brand:</strong> <?= $product->brand ?> </span>
-                    <span> <strong>Price:</strong> <?= $product->price ?> </span>
-                    <span> <strong>Quantity:</strong> <?= $product->quantity ?> </span>
-                    <span> <strong>Animal Type:</strong> <?= $product->animal_type ?> </span>
-                    <span> <strong>Food Type:</strong> <?= $product->food_type ?> </span>
-                    <span> <strong>Expire Date:</strong> <?= $product->expire_date ?> </span>
-                    <span> <strong>Toy Type:</strong> <?= $product->toy_type ?> </span>
-                    <span> <strong>Size:</strong> <?= $product->size ?> </span>
+                    <span><strong>Brand:</strong> <?= $product->brand ?>|-----|</span>
+                    <span><strong>Price:</strong> <?= $product->price ?>|-----|</span>
+                    <span><strong>Quantity:</strong> <?= $product->quantity ?>|-----|</span>
+                    <span><strong>Animal Type:</strong> <?= $product->animal_type ?>|-----|</span>
+                    <?php foreach($FoodProducts as $FoodProduct) { ?>
+                        <span><strong>Food Type:</strong> <?= $FoodProduct->food_type ?>|-----|</span>
+                        <span><strong>Expire Date:</strong> <?= $FoodProduct->expire_date ?></span>
+                    <?php } ?>
+                </li>
+            <?php } ?>
+            <hr>
+            <?php foreach($Products as $product) { ?>
+                <li>
+                    <span><strong>Brand:</strong> <?= $product->brand ?>|-----|</span>
+                    <span><strong>Price:</strong> <?= $product->price ?>|-----|</span>
+                    <span><strong>Quantity:</strong> <?= $product->quantity ?>|-----|</span>
+                    <span><strong>Animal Type:</strong> <?= $product->animal_type ?>|-----|</span>
+                    <?php foreach($ToyProducts as $ToyProduct) { ?>
+                        <span><strong>Toy Type:</strong> <?= $ToyProduct->toy_type ?>|-----|</span>
+                        <span><strong>Size:</strong> <?= $ToyProduct->size ?></span>
+                    <?php } ?>
                 </li>
             <?php } ?>
         </ul>
@@ -40,14 +53,17 @@ Il pagamento avviene con la carta di credito, che non deve essere scaduta  -->
         <ul>
             <?php foreach($users as $user) { ?>
                 <li>
-                    <p> <strong>Name:</strong> <?= $user->name ?> </p>
-                    <p> <strong>Surname:</strong> <?= $user->surname ?> </p>
-                    <p> <strong>Email:</strong> <?= $user->email ?> </p>
-                    <p> <strong>Number:</strong> <?= $user->card_number ?> </p>
-                    <p> <strong>Card Name:</strong> <?= $user->card_name ?> </p>
-                    <p> <strong>Card Surname:</strong> <?= $user->card_surname ?> </p>
-                    <p> <strong>Card Brand:</strong> <?= $user->card_brand ?> </p>
-                    <p> <strong>Card Expire:</strong> <?= $user->card_expire ?> </p>
+                    <p><strong>Name:</strong> <?= $user->name ?></p>
+                    <p><strong>Surname:</strong> <?= $user->surname ?></p>
+                    <p><strong>Email:</strong> <?= $user->email ?></p>
+                    <hr>
+                    <?php foreach($creditcards as $creditcard) { ?>
+                        <p><strong>Card Number:</strong> <?= $creditcard->card_number ?></p>
+                        <p><strong>Card Name:</strong> <?= $creditcard->card_name ?></p>
+                        <p><strong>Card Surname:</strong> <?= $creditcard->card_surname ?></p>
+                        <p><strong>Card Brand:</strong> <?= $creditcard->card_brand ?></p>
+                        <p><strong>Card Expire:</strong> <?= $creditcard->card_expire ?></p>
+                    <?php } ?>
                 </li>
             <?php } ?>
         </ul>
