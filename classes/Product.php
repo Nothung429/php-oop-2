@@ -4,6 +4,7 @@
         public $price;
         public $quantity;
         public $animal_type;
+        public $discount = 0;
 
         public function __construct($_brand, $_price, $_quantity, $_animal_type)
         {

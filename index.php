@@ -53,14 +53,12 @@ Il pagamento avviene con la carta di credito, che non deve essere scaduta  -->
         <ul>
             <?php foreach($users as $user) { ?>
                 <li>
-                    <p><strong>Name:</strong> <?= $user->name ?></p>
-                    <p><strong>Surname:</strong> <?= $user->surname ?></p>
+                    <p><strong>User:</strong> <?= $user->getFullName() ?></p>
                     <p><strong>Email:</strong> <?= $user->email ?></p>
                     <hr>
                     <?php foreach($creditcards as $creditcard) { ?>
+                        <p><strong>Card User:</strong> <?= $creditcard->getCardFullName() ?></p>
                         <p><strong>Card Number:</strong> <?= $creditcard->card_number ?></p>
-                        <p><strong>Card Name:</strong> <?= $creditcard->card_name ?></p>
-                        <p><strong>Card Surname:</strong> <?= $creditcard->card_surname ?></p>
                         <p><strong>Card Brand:</strong> <?= $creditcard->card_brand ?></p>
                         <p><strong>Card Expire:</strong> <?= $creditcard->card_expire ?></p>
                     <?php } ?>
